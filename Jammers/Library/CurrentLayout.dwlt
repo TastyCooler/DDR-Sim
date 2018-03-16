@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -66,9 +66,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1904
     height: 981
   m_MinSize: {x: 950, y: 300}
+=======
+    width: 1920
+    height: 997
+  m_MinSize: {x: 950, y: 521}
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &4
 MonoBehaviour:
@@ -130,12 +136,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1904
     height: 931
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
   controlID: 47
+=======
+    width: 1920
+    height: 947
+  m_MinSize: {x: 713, y: 471}
+  m_MaxSize: {x: 18008, y: 14021}
+  vertical: 0
+  controlID: 27
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,7 +174,11 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 48
+=======
+  controlID: 28
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -205,10 +224,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1034
     y: 0
+<<<<<<< HEAD
     width: 505
     height: 931
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
+=======
+    width: 509
+    height: 947
+  m_MinSize: {x: 234, y: 471}
+  m_MaxSize: {x: 10004, y: 14021}
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
   vertical: 1
   controlID: 70
 --- !u!114 &10
@@ -227,10 +253,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 505
     height: 660
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
+=======
+    width: 509
+    height: 671
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -542,9 +575,15 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 322a0000
     m_LastClickedID: 10802
     m_ExpandedIDs: 04faffff00000000
+=======
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 6af8ffff9efbffff00000000
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -606,19 +645,25 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Henry progress
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Henry progress
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Cooler\Desktop\Game\Jammers
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 98290000
     m_LastClickedID: 10648
     m_ExpandedIDs: 00000000882900008c290000b82a000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 7a270000
+    m_LastClickedID: 10106
+    m_ExpandedIDs: 000000007a2700007e2700001029000000ca9a3bffffff7f
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -646,7 +691,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000882900008c290000b82a0000
+=======
+    m_ExpandedIDs: 000000007a2700007e27000010290000
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -677,18 +726,27 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c62300008a32070000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
+<<<<<<< HEAD
       m_Name: Scripts
       m_OriginalName: Scripts
+=======
+      m_Name: 
+      m_OriginalName: 
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
+<<<<<<< HEAD
       m_UserData: 10636
+=======
+      m_UserData: 0
+>>>>>>> 7bc54d5075be69e1b03e9a6b816195e01f262416
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
