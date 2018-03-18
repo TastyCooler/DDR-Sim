@@ -285,9 +285,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Dialogue System\Scripts\Dialogue.cs" />
-    <Compile Include="Assets\Dialogue System\Scripts\DialogueManager.cs" />
-    <Compile Include="Assets\Dialogue System\Scripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Game\Scripts\Conversation.cs" />
+    <Compile Include="Assets\Game\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Game\Scripts\Human.cs" />
+    <Compile Include="Assets\Game\Scripts\Implemented\DialogueScripts\Dialogue.cs" />
+    <Compile Include="Assets\Game\Scripts\Implemented\DialogueScripts\DialogueManager.cs" />
+    <Compile Include="Assets\Game\Scripts\Implemented\DialogueScripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Game\Scripts\Matthias.cs" />
+    <Compile Include="Assets\Inheritance\Cat.cs" />
+    <Compile Include="Assets\Inheritance\ControlPanel.cs" />
+    <Compile Include="Assets\Inheritance\Creature.cs" />
+    <Compile Include="Assets\Inheritance\Person.cs" />
+    <Compile Include="Assets\NPC Conversations\DialogueControl.cs" />
+    <Compile Include="Assets\UI Input\Scripts\ViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
