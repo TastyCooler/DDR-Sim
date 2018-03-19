@@ -5,11 +5,10 @@ using UnityEngine.EventSystems;
 
 public class DropOff : MonoBehaviour, IDropHandler {
 
-    #region Fields
-
     // Reference to DragAndDrop script
     DragAndDrop drop;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     // Need to save location to set it back when someone put another object on Table
     [HideInInspector] public Transform returnObject;
@@ -28,10 +27,12 @@ public class DropOff : MonoBehaviour, IDropHandler {
     #endregion
 >>>>>>> 53914b9ed0336459f2cef0763d9951550df597d7
 
+=======
+>>>>>>> parent of 53914b9... DragDrop enhanced
     public void OnDrop(PointerEventData eventData)
     {
-        // Reference to DragAndDrop pointer
         drop = eventData.pointerDrag.GetComponent<DragAndDrop>();
+<<<<<<< HEAD
 
 <<<<<<< HEAD
         // verify if the ray/pointer hits something
@@ -74,6 +75,11 @@ public class DropOff : MonoBehaviour, IDropHandler {
                 }
             }
 >>>>>>> 53914b9ed0336459f2cef0763d9951550df597d7
+=======
+        if(drop != null)
+        {
+            drop.returnToParent = this.transform;
+>>>>>>> parent of 53914b9... DragDrop enhanced
         }
     }
 }

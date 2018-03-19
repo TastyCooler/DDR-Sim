@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 m_EditorVersion: 2017.3.1f1
 =======
 m_EditorVersion: 2017.1.1f1
 >>>>>>> 53914b9ed0336459f2cef0763d9951550df597d7
+=======
+m_EditorVersion: 2017.3.0f3
+>>>>>>> parent of 53914b9... DragDrop enhanced

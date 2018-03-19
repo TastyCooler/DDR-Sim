@@ -21,8 +21,7 @@ GameObject:
   - component: {fileID: 224389721163679958}
   - component: {fileID: 222937044704941860}
   - component: {fileID: 114717240226032234}
-  - component: {fileID: 225027445545117028}
-  - component: {fileID: 114110585377547136}
+  - component: {fileID: 114362277788827842}
   m_Layer: 0
   m_Name: Soul-Food-Sprite
   m_TagString: Untagged
@@ -30,7 +29,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114110585377547136
+--- !u!114 &114362277788827842
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -38,7 +37,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1243289405081772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bba1c7ff63acf74bb72b9e62ef6d927, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fcacf75e8cd8d847a80e3a2e4ff367f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   returnToParent: {fileID: 0}
@@ -93,14 +92,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &225027445545117028
-CanvasGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1243289405081772}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
