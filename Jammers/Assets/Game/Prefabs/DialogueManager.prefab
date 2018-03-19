@@ -72,3 +72,6 @@ MonoBehaviour:
   animator: {fileID: 0}
   nameText: {fileID: 0}
   dialogueText: {fileID: 0}
+  yes: {fileID: 0}
+  no: {fileID: 0}
+  dialogended: 0

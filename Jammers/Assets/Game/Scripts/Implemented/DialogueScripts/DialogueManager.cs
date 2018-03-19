@@ -9,6 +9,10 @@ public class DialogueManager : MonoBehaviour {
     public Animator animator;
     public Text nameText;
     public Text dialogueText;
+    public Button yes;
+    public Button no;
+    public bool dialogended;
+    
     #endregion
     #region Private Fields
     private Queue<string> sentences;
@@ -20,11 +24,14 @@ public class DialogueManager : MonoBehaviour {
     {
         sentences = new Queue<string>(); //initializing a new string Queue
         endsentences = new Queue<string>();
+        
+        
     }
     #endregion
     #region Class Functions
     public void StartDialogue(Dialogue dialogue)
     {
+        InitDialogue(dialogue);
         animator.SetBool("IsOpen", true); // Sets the param. IsOpen to true, because the dialogue started
                                           // Debug.Log("Starting conversation with " + dialogue.name);
 
@@ -46,6 +53,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void DisplayNextEndSentence()
     {
+        
         if (endsentences.Count == 0) //.Count gets the number of elements in the queue. If no elemenets then the dialogue ends
         {
             EndDialogue();
@@ -53,7 +61,7 @@ public class DialogueManager : MonoBehaviour {
         }
 
         string endsentence = endsentences.Dequeue(); //removes and returns the object at the beginning of the queue
-                                               // Debug.Log(sentence);
+        // Debug.Log(sentence);
         StopAllCoroutines();  // stops the TypeSentence coroutine, so the animation can finish
         StartCoroutine(TypeSentence(endsentence)); // starts the coroutine
     }
@@ -63,6 +71,7 @@ public class DialogueManager : MonoBehaviour {
         if (sentences.Count == 0) //.Count gets the number of elements in the queue. If no elemenets then the dialogue ends
         {
             EndDialogue();
+            
             return;
         }
         
@@ -70,6 +79,7 @@ public class DialogueManager : MonoBehaviour {
                                                // Debug.Log(sentence);
         StopAllCoroutines();  // stops the TypeSentence coroutine, so the animation can finish
         StartCoroutine(TypeSentence(sentence)); // starts the coroutine
+       
     }
 
     IEnumerator TypeSentence(string sentence) //character animation
@@ -86,6 +96,28 @@ public class DialogueManager : MonoBehaviour {
     {
         //Debug.Log("End of conversation.");
         animator.SetBool("IsOpen", false); //sets the animator parameter "IsOpen" to false
+        dialogended = true;
     }
+
+
     #endregion
+
+    void InitDialogue(Dialogue dialogue)
+    {
+        dialogue.sentences = new string[2] { "Ohaio Gozaimasu!", "Im lonely, can I have some eggs pls?" };
+
+        dialogue.endsentences = new string[2] { "I HATE YOU!", "WHY I DO I GET NO EGGS?" };
+
+    }
+
+    public void DisableNoButton()
+    {
+            no.gameObject.SetActive(false);
+    }
+    public void DisableYesButton()
+    {
+        yes.gameObject.SetActive(false);
+    }
+
+   
 }
