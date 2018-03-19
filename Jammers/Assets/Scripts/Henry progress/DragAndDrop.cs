@@ -22,10 +22,10 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDr
     public void OnBeginDrag(PointerEventData eventData)
     {
         // Saving parent position(Inventory) where it came from
-        returnToParent = this.transform.parent;
+        returnToParent = transform.parent;
 
         // Set object out of parent position(Inventory), however, still in canves
-        this.transform.SetParent(this.transform.parent.parent);
+        transform.SetParent(transform.parent.parent);
 
         // Stop canves object from blocking the raycast coming from mouse
         blockRay = false;
@@ -39,7 +39,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDr
     public void OnDrag(PointerEventData eventData)
     {
         // Set canves object to mouseposition
-        this.transform.position = eventData.position;
+        transform.position = eventData.position;
     }
 
     /// <summary>
@@ -49,7 +49,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDr
     public void OnEndDrag(PointerEventData eventData)
     {
         // Set position back to parent position(Inventory)
-        this.transform.SetParent(returnToParent);
+        transform.SetParent(returnToParent);
 
         // Enable canves object to block raycast
         blockRay = true;
