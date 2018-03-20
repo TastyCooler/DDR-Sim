@@ -97,7 +97,7 @@ public class DialogueManager : MonoBehaviour {
     void EndDialogue()
     {
         //Debug.Log("End of conversation.");
-        if (iS.itemSold)
+        if (iS.itemSold || endsentences.Count == 0)
         {
             animator.SetBool("IsOpen", false); //sets the animator parameter "IsOpen" to false
             dialogended = true;

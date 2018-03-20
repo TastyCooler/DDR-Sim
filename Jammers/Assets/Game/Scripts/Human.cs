@@ -35,7 +35,7 @@ public class Human : MonoBehaviour {
 
     private void Update()
     {
-       // print(dm.dialogended);
+        print(dm.dialogended);
         startFadingOut();
         dm.dialogended = false;
     }
@@ -94,9 +94,12 @@ public class Human : MonoBehaviour {
     }
     public void startFadingOut()
     {
-        if (dm.dialogended && iS.itemSold)
+        if (dm.dialogended)
         {
+            StartCoroutine(FadeOut());
 
+        } else if (iS.itemSold)
+        {
             StartCoroutine(FadeOut());
         }
 
