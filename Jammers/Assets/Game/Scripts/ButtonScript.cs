@@ -8,6 +8,7 @@ public class ButtonScript : MonoBehaviour {
 
     public Sprite originSprite;
     public Sprite targetSprite;
+    public Sprite hoverSprite;
 	// Use this for initialization
 	void Start () {
         sprite = GetComponent<SpriteRenderer>();
@@ -20,12 +21,14 @@ public class ButtonScript : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        transform.localScale = new Vector3(0.30f, 0.30f, 0.30f);
+        transform.localScale = new Vector3(0.42f, 0.42f, 0.42f);
+        sprite.sprite = hoverSprite;
     }
 
     private void OnMouseExit()
     {
-        transform.localScale = new Vector3(0.26f, 0.26f, 0.26f);
+        transform.localScale = new Vector3(0.37f, 0.37f, 0.37f);
+        sprite.sprite = originSprite;
     }
 
     private void OnMouseDown()
