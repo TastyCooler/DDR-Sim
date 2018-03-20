@@ -11,7 +11,7 @@ public class DropOff : MonoBehaviour, IDropHandler {
     DragAndDrop drop;
 
     // Toggle on to let only one object on parent object(Inventory or Table)
-    public bool oneObjectOnly       = false;
+    public bool nothingOnTable      = false;
 
     // Toggle on to let more object on parent object(Inventory or Table)
     public bool moreThenOneObject   = false;
@@ -39,14 +39,8 @@ public class DropOff : MonoBehaviour, IDropHandler {
                 }
             }
 
-            // Look if theres already an child object in the parent object(Table)
-            if (transform.childCount < 1)
-            {
-                oneObjectOnly = true;
-            }
-
             // Let and object droppable and prohibit to drop anything if theres something
-            if (oneObjectOnly)
+            if (nothingOnTable)
             {
                 // Verify if there is an parent position(Table) to drop it off
                 if (drop != null)
@@ -54,9 +48,18 @@ public class DropOff : MonoBehaviour, IDropHandler {
 
                     // place object on parent position(Table)
                     drop.returnToParent = transform;
-                    oneObjectOnly = false;
+                    nothingOnTable = false;
                 }
             }
+        }
+    }
+
+    void Update()
+    {
+        // Look if theres already an child object in the parent object(Table)
+        if (transform.childCount < 1)
+        {
+            nothingOnTable = true;
         }
     }
 }
