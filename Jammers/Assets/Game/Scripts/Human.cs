@@ -12,9 +12,9 @@ public class Human : MonoBehaviour {
     SpriteRenderer rend;
     GameObject dialogueManager;
     DialogueManager dm;
-
+    GameObject itemSystem;
+    ItemSystem iS;
    
-
     // Use this for initialization
     void Start()
     {
@@ -26,18 +26,29 @@ public class Human : MonoBehaviour {
 
         dialogueManager = GameObject.Find("DialogueManager");
         dm = dialogueManager.GetComponent<DialogueManager>();
+
+        itemSystem = GameObject.Find("ItemSystem");
+        iS = itemSystem.GetComponent<ItemSystem>();
+
         StartCoroutine(Animator());
     }
 
+    private void Update()
+    {
+       // print(dm.dialogended);
+        startFadingOut();
+        dm.dialogended = false;
+    }
+    #region Animation 
     public void PrepareFade()
     {
         rend = GetComponent<SpriteRenderer>();
         Color c = rend.material.color;
         c.a = 0f;
         rend.material.color = c;
-       // startFading();
+        // startFading();
 
-        }
+    }
     IEnumerator FadeIn()
     {
         for (float f = 0.05f; f <= 1; f += 0.05f)
@@ -54,17 +65,9 @@ public class Human : MonoBehaviour {
         StartCoroutine(FadeIn());
     }
 
-
-    private void Update()
-    {
-        print(dm.dialogended);
-        startFadingOut();
-        dm.dialogended = false;
-    }
-
     protected virtual void Move()
     {
-        
+
         Vector3 pos = startPosition + Vector3.right;
         verticalVelocity -= 14 * Time.deltaTime;
 
@@ -75,28 +78,23 @@ public class Human : MonoBehaviour {
             pos.y = verticalVelocity + startPosition.y;
             thisTransform.position = pos;
         }
-        
+
     }
 
-    public virtual void Talk() // instead of virtual use abstract, if everyone talks unique; the class has to be abstract as well!!! And this method has to be overrided!
-    {
-        Debug.Log("Creatue says : Good Times");
-    }
-   
     IEnumerator FadeOut()
     {
         for (float f = 1f; f >= -0.05f; f -= 0.05f)
-        {   
+        {
             Color c = rend.material.color;
             c.a = f;
             rend.material.color = c;
             yield return new WaitForSeconds(0.05f);
         }
 
-    } 
+    }
     public void startFadingOut()
     {
-        if (dm.dialogended)
+        if (dm.dialogended && iS.itemSold)
         {
 
             StartCoroutine(FadeOut());
@@ -107,10 +105,12 @@ public class Human : MonoBehaviour {
     IEnumerator Animator()
     {
         startFading();
-       // startFadingOut();
+        // startFadingOut();
 
         yield return null;
     }
+    #endregion
+
 
 }
 

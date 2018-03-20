@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
-
+    GameObject itemSystem;
+    ItemSystem iS;
     #region Public fields
     public Animator animator;
     public Text nameText;
@@ -24,8 +25,9 @@ public class DialogueManager : MonoBehaviour {
     {
         sentences = new Queue<string>(); //initializing a new string Queue
         endsentences = new Queue<string>();
-        
-        
+
+        itemSystem = GameObject.Find("ItemSystem");
+        iS = itemSystem.GetComponent<ItemSystem>();
     }
     #endregion
     #region Class Functions
@@ -95,8 +97,12 @@ public class DialogueManager : MonoBehaviour {
     void EndDialogue()
     {
         //Debug.Log("End of conversation.");
-        animator.SetBool("IsOpen", false); //sets the animator parameter "IsOpen" to false
-        dialogended = true;
+        if (iS.itemSold)
+        {
+            animator.SetBool("IsOpen", false); //sets the animator parameter "IsOpen" to false
+            dialogended = true;
+        }
+        
     }
 
 
@@ -104,9 +110,9 @@ public class DialogueManager : MonoBehaviour {
 
     void InitDialogue(Dialogue dialogue)
     {
-        dialogue.sentences = new string[2] { "Ohaio Gozaimasu!", "Im lonely, can I have some eggs pls?" };
+        dialogue.sentences = new string[4] { "Ohaio Gozaimasu!", "My Husband went on ''vacation'', without telling me","I feel so lonely... ","Can I get some eggs please?" };
 
-        dialogue.endsentences = new string[2] { "I HATE YOU!", "WHY I DO I GET NO EGGS?" };
+        dialogue.endsentences = new string[2] { "I HATE YOU!", "WHY DO I GET NO EGGS?" };
 
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Product : DragAndDrop {
 
-    [SerializeField] private float price = 0;
+     public float price = 0;
 
 
 }

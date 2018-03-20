@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -82,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Game\Scripts\ButtonScript.cs" />
+    <Compile Include="Assets\Game\Scripts\Chicken.cs" />
     <Compile Include="Assets\Game\Scripts\Conversation.cs" />
     <Compile Include="Assets\Game\Scripts\GameManager.cs" />
     <Compile Include="Assets\Game\Scripts\Henry progress\DragAndDrop.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="Assets\Game\Scripts\Implemented\DialogueScripts\Dialogue.cs" />
     <Compile Include="Assets\Game\Scripts\Implemented\DialogueScripts\DialogueManager.cs" />
     <Compile Include="Assets\Game\Scripts\Implemented\DialogueScripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Game\Scripts\ItemSystem.cs" />
     <Compile Include="Assets\Game\Scripts\Matthias.cs" />
     <Compile Include="Assets\Game\Scripts\ScoreKeeper.cs" />
     <Compile Include="Assets\Inheritance\Cat.cs" />
