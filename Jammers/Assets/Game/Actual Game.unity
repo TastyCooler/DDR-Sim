@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb0fb674575ec94a8a7f028a4063875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reputation: 0
 --- !u!212 &229530261
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -657,6 +658,34 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -346
       objectReference: {fileID: 0}
+    - target: {fileID: 114936970136656514, guid: f304a077685c5364586a5c1ec8e62ff5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 51c9b2de99d32ac469a5810169d78c56,
+        type: 3}
+    - target: {fileID: 114312557755475224, guid: f304a077685c5364586a5c1ec8e62ff5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 13e26e634265f5b4fbd7f7d4fd5bdc91,
+        type: 3}
+    - target: {fileID: 114312557755475224, guid: f304a077685c5364586a5c1ec8e62ff5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347051769778098, guid: f304a077685c5364586a5c1ec8e62ff5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f7d3db781385bc4888e9e9a40717791,
+        type: 3}
+    - target: {fileID: 114347051769778098, guid: f304a077685c5364586a5c1ec8e62ff5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f304a077685c5364586a5c1ec8e62ff5, type: 2}
   m_IsPrefabParent: 0
@@ -1099,18 +1128,7 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 120
       objectReference: {fileID: 0}
-    - target: {fileID: 114467831046955610, guid: 7a7263c7c565e6e4787e76bcf2d830fc,
-        type: 2}
-      propertyPath: price
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114462706446929890, guid: 7a7263c7c565e6e4787e76bcf2d830fc,
-        type: 2}
-      propertyPath: price
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114796436087317202, guid: 7a7263c7c565e6e4787e76bcf2d830fc, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a7263c7c565e6e4787e76bcf2d830fc, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1147277992
@@ -1155,6 +1173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Maltereputation: 50
   Matthiasreputation: 30
+  myMoney: 0
 --- !u!1 &1392519256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,6 +1474,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1808941391 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1426203955407182, guid: 7a7263c7c565e6e4787e76bcf2d830fc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1045371615}
+--- !u!114 &1808941398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808941391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a409e203423a53847a2df41aa30191ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1883215019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,24 +1518,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1928258134 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1069664777481738, guid: 7a7263c7c565e6e4787e76bcf2d830fc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1045371615}
---- !u!114 &1928258135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1928258134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bba1c7ff63acf74bb72b9e62ef6d927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  returnToParent: {fileID: 0}
-  price: 4
 --- !u!1001 &2083278642
 Prefab:
   m_ObjectHideFlags: 0

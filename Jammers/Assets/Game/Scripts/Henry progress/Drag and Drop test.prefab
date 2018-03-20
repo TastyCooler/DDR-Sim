@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 222277427904910856}
   - component: {fileID: 114989982076668666}
   - component: {fileID: 225297245829164088}
-  - component: {fileID: 114796436087317202}
+  - component: {fileID: 114995529957172686}
   m_Layer: 0
   m_Name: Soul-Food-Sprite (1)
   m_TagString: Untagged
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oneObjectOnly: 0
   moreThenOneObject: 1
+  laysOnTable: 0
 --- !u!114 &114070211047066034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,7 +246,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8816e3455c6fc5242b4c437304244fbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17477ce725b5c4b4887da8be540628ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -265,14 +266,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.27205884, g: 0.030006487, b: 0.030006487, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8816e3455c6fc5242b4c437304244fbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e0dcef550e080c47958acd43c4f9522, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -292,7 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnToParent: {fileID: 0}
-  price: 5
+  price: 2
+  dropper: {fileID: 0}
 --- !u!114 &114467831046955610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,7 +307,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnToParent: {fileID: 0}
-  price: 5
+  price: 7
+  dropper: {fileID: 0}
 --- !u!114 &114548009207723768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -335,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oneObjectOnly: 1
   moreThenOneObject: 0
+  laysOnTable: 0
 --- !u!114 &114767369489399488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.228}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -362,19 +366,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114796436087317202
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1069664777481738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bba1c7ff63acf74bb72b9e62ef6d927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  returnToParent: {fileID: 0}
-  price: 3
 --- !u!114 &114807187895231400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -446,14 +437,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.86764705, g: 0.05103806, b: 0.05103806, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8816e3455c6fc5242b4c437304244fbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b560e0b7f228614099a63042a939a8d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -461,6 +452,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114995529957172686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069664777481738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bba1c7ff63acf74bb72b9e62ef6d927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnToParent: {fileID: 0}
+  price: 4
+  dropper: {fileID: 1426203955407182}
 --- !u!222 &222048855312535580
 CanvasRenderer:
   m_ObjectHideFlags: 1

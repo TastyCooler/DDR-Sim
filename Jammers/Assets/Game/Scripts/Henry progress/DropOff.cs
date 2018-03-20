@@ -19,6 +19,8 @@ public class DropOff : MonoBehaviour, IDropHandler {
     // Parent Object(Inventory or Table) is occupied
     private bool accessOnObject     = true;
 
+    public bool laysOnTable;
+
     #endregion
 
     public void OnDrop(PointerEventData eventData)

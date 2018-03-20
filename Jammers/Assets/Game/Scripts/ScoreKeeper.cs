@@ -6,6 +6,7 @@ public class ScoreKeeper : MonoBehaviour {
 
     public int Maltereputation = 50;
     public int Matthiasreputation = 30;
+    public int myMoney;
     bool clicked = false;
 
     // Use this for initialization
