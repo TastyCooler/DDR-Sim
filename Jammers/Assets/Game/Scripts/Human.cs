@@ -7,7 +7,7 @@ public class Human : MonoBehaviour {
     protected Transform thisTransform;
     private Vector3 startPosition;
     private float verticalVelocity;
-    private int reputation;
+    public int reputation;
     private string name;
     SpriteRenderer rend;
     GameObject dialogueManager;

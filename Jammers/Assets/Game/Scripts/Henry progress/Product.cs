@@ -5,6 +5,12 @@ using UnityEngine;
 public class Product : DragAndDrop {
 
      public float price = 0;
+     
+
+    void sellItem()
+    {
+
+    }
 
 
 }
