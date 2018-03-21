@@ -20,9 +20,10 @@ public class DialogueManager : MonoBehaviour {
     Cola cola;
     Cigarettes cigarettes;
     Chocolate chocolate;
-    GameObject col, cig, choc, beer, ketchup;
+    GameObject col, cig, choc, beer, ketchup, soup;
     Beer bBeer;
     Ketchup kKetchup;
+    Soup sSoup;
     
     #endregion
     #region Private Fields
@@ -53,6 +54,8 @@ public class DialogueManager : MonoBehaviour {
         ketchup = GameObject.Find("Ketchup");
         kKetchup = ketchup.GetComponent<Ketchup>();
 
+        soup = GameObject.Find("Soup");
+        sSoup = soup.GetComponent<Soup>();
     }
     #endregion
     #region Class Functions
@@ -111,7 +114,7 @@ public class DialogueManager : MonoBehaviour {
             waitForItem = true;
         }
         
-        if (sentences.Count == 0 && cola.destroyed || cigarettes.destroyed || chocolate.destroyed || bBeer.destroyed || kKetchup.destroyed) //.Count gets the number of elements in the queue. If no elemenets then the dialogue ends
+        if (sentences.Count == 0 && cola.destroyed || cigarettes.destroyed || chocolate.destroyed || bBeer.destroyed || kKetchup.destroyed || sSoup.destroyed) //.Count gets the number of elements in the queue. If no elemenets then the dialogue ends
         {
             
             Debug.Log("dialog ended");
@@ -211,6 +214,24 @@ public class DialogueManager : MonoBehaviour {
         } 
         if (GameObject.Find("Stefan"))
         {
+            dialogue.sentences = new string[7] { "Did you see Stacy?", "Ah I know where she is...", "Did you know that people rather stay here instead of going on vacation?", "Yeah I know this is actually pretty obvious", "I'd like some Ketchup", "I want to make some original Pasta today", "Ketchup please" };
+
+            dialogue.endsentences = new string[2] { "You have to work", "There's no way out" };
+
+            dialogue.othersentences = new string[1] { "I need mashed tomatoes" };
+        }
+        if (GameObject.Find("Bernd"))
+        {
+
+            dialogue.sentences = new string[7] { "Did you see Stacy?", "Ah I know where she is...", "Did you know that people rather stay here instead of going on vacation?", "Yeah I know this is actually pretty obvious", "I'd like some Ketchup", "I want to make some original Pasta today", "Ketchup please" };
+
+            dialogue.endsentences = new string[2] { "You have to work", "There's no way out" };
+
+            dialogue.othersentences = new string[1] { "I need mashed tomatoes" };
+        }
+        if (GameObject.Find("Tina"))
+        {
+
             dialogue.sentences = new string[7] { "Did you see Stacy?", "Ah I know where she is...", "Did you know that people rather stay here instead of going on vacation?", "Yeah I know this is actually pretty obvious", "I'd like some Ketchup", "I want to make some original Pasta today", "Ketchup please" };
 
             dialogue.endsentences = new string[2] { "You have to work", "There's no way out" };

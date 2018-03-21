@@ -9,6 +9,9 @@ public class Härher : Human {
         Cola cola = collider.gameObject.GetComponent<Cola>();
         Cigarettes cig = collider.gameObject.GetComponent<Cigarettes>();
         Beer beer = collider.gameObject.GetComponent<Beer>();
+        Ketchup ketchup = collider.gameObject.GetComponent<Ketchup>();
+        Soup soup = collider.gameObject.GetComponent<Soup>();
+        Chocolate choc = collider.gameObject.GetComponent<Chocolate>();
         if (beer && dm.waitForItem)
         {
 
@@ -16,7 +19,7 @@ public class Härher : Human {
             dm.waitForItem = false;
             Destroy(beer.gameObject);
         }
-        if (cig && dm.waitForItem)
+        if (cola || beer || ketchup || soup || choc && dm.waitForItem)
         {
             dm.wrongItem = true;
             dm.dialogended = false;

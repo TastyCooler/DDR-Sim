@@ -8,7 +8,11 @@ public class Tom : Human {
     {
         Cola cola = collider.gameObject.GetComponent<Cola>();
         Cigarettes cig = collider.gameObject.GetComponent<Cigarettes>();
+        Beer beer = collider.gameObject.GetComponent<Beer>();
+        Ketchup ketchup = collider.gameObject.GetComponent<Ketchup>();
+        Soup soup = collider.gameObject.GetComponent<Soup>();
         Chocolate choc = collider.gameObject.GetComponent<Chocolate>();
+
         if (choc && dm.waitForItem)
         {
 
@@ -16,7 +20,7 @@ public class Tom : Human {
             dm.waitForItem = false;
             Destroy(choc.gameObject);
         }
-        if (cola || cig && dm.waitForItem)
+        if (cig || beer || ketchup || soup || cola  && dm.waitForItem)
         {
             dm.wrongItem = true;
             dm.dialogended = false;
