@@ -20,8 +20,9 @@ public class DialogueManager : MonoBehaviour {
     Cola cola;
     Cigarettes cigarettes;
     Chocolate chocolate;
-    GameObject col, cig, choc;
-
+    GameObject col, cig, choc, beer, ketchup;
+    Beer bBeer;
+    Ketchup kKetchup;
     
     #endregion
     #region Private Fields
@@ -45,6 +46,12 @@ public class DialogueManager : MonoBehaviour {
 
         choc = GameObject.Find("Chocolate");
         chocolate = choc.GetComponent<Chocolate>();
+
+        beer = GameObject.Find("Beer");
+        bBeer = beer.GetComponent<Beer>();
+
+        ketchup = GameObject.Find("Ketchup");
+        kKetchup = ketchup.GetComponent<Ketchup>();
 
     }
     #endregion
@@ -104,7 +111,7 @@ public class DialogueManager : MonoBehaviour {
             waitForItem = true;
         }
         
-        if (sentences.Count == 0 && cola.destroyed || cigarettes.destroyed || chocolate.destroyed) //.Count gets the number of elements in the queue. If no elemenets then the dialogue ends
+        if (sentences.Count == 0 && cola.destroyed || cigarettes.destroyed || chocolate.destroyed || bBeer.destroyed || kKetchup.destroyed) //.Count gets the number of elements in the queue. If no elemenets then the dialogue ends
         {
             
             Debug.Log("dialog ended");
@@ -147,7 +154,7 @@ public class DialogueManager : MonoBehaviour {
         foreach (char letter in sentence.ToCharArray()) //ToCharArray converts a string into a char array
         {
             dialogueText.text += letter; //loops through all texts
-            yield return new WaitForSeconds(0.2f); //after each letter 1 frame passes
+            yield return new WaitForSeconds(0.02f); //after each letter 1 frame passes
         }
     }
 
@@ -184,7 +191,7 @@ public class DialogueManager : MonoBehaviour {
 
             dialogue.endsentences = new string[4] { "What's wrong?", "You should give me some cigarettes", "Give them now", "You better give them now." };
 
-            dialogue.othersentences = new string[1] { "This aint cigarettes" };
+            dialogue.othersentences = new string[1] { "This ain't cigarettes" };
         }
         if (GameObject.Find("Tom"))
         {
@@ -193,6 +200,22 @@ public class DialogueManager : MonoBehaviour {
             dialogue.endsentences = new string[2] { "Hmmm...?", "I have no time for that" };
 
             dialogue.othersentences = new string[1] { "C-H-O-C-O-L-A-T-E" };
+        }
+        if (GameObject.Find("Herr Härher"))
+        {
+            dialogue.sentences = new string[7] { "Gg...Ghg... GUTEN TAG!!", "My w..w...wife went on vacation without telling me", "Why did she leave without me?", "I bet we can leave simply soon", "I heard people don't come back from vacation...", "What do you think? Nevermind...","I need more beer" };
+
+            dialogue.endsentences = new string[2] { "Argh..", "Just click yes" };
+
+            dialogue.othersentences = new string[1] { "I need beer" };
+        } 
+        if (GameObject.Find("Stefan"))
+        {
+            dialogue.sentences = new string[7] { "Did you see Stacy?", "Ah I know where she is...", "Did you know that people rather stay here instead of going on vacation?", "Yeah I know this is actually pretty obvious", "I'd like some Ketchup", "I want to make some original Pasta today", "Ketchup please" };
+
+            dialogue.endsentences = new string[2] { "You have to work", "There's no way out" };
+
+            dialogue.othersentences = new string[1] { "I need mashed tomatoes" };
         }
     }
 
