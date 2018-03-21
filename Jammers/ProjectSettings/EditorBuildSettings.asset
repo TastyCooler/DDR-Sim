@@ -20,3 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Game/Scene1/Actual Game 4.unity
     guid: 965c57b68592ad84b9e1d39c6df60875
+  - enabled: 1
+    path: Assets/Assets/Game/Scene1/Actual Game 5.unity
+    guid: 74f624ad77dc9854280200ec133db5ac
+  - enabled: 1
+    path: Assets/Assets/Game/Scene1/Actual Game 6.unity
+    guid: 68d9fbb5c9090e54c9dc73b846d6c940
