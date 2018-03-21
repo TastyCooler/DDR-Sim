@@ -36,11 +36,7 @@ public class ObjectPhysics : MonoBehaviour {
     void Update()
     {
         targetVelocity = Vector2.zero;
-        ComputeVelocity();
-    }
-    protected virtual void ComputeVelocity()
-    {
-
+       
     }
 
     private void FixedUpdate()
@@ -139,14 +135,14 @@ public class ObjectPhysics : MonoBehaviour {
     }
 
     //OnMouseEnter is called when the mouse entered the GUIElement or Collider.
-    public void OnMouseEnter()
+    public virtual void OnMouseEnter()
     {
         //change the scale of the object to make it clear it's been selected
         this.transform.localScale = new Vector3(selectScale, selectScale, selectScale);
     }
 
     // OnMouseExit is called when the mouse is not any longer over the GUIElement or Collider.
-    public void OnMouseExit()
+    public virtual void OnMouseExit()
     {
         //reset the scale to default when the object is no longer selected
         this.transform.localScale = new Vector3(0.13f, 0.13f, 0.13f);

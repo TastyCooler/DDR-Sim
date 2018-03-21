@@ -14,5 +14,8 @@ public class Dialogue { //Dialogue Class, as a "Tool" to create text
 
     [TextArea(3, 10)]
     public string[] endsentences;
+
+    [TextArea(3, 10)]
+    public string[] othersentences;
     #endregion 
 }

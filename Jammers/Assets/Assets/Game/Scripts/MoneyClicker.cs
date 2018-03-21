@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoneyClicker : MonoBehaviour {
 
-    public int score;
+    public int score = 0;
     public Transform text;
 
     // Use this for initialization
@@ -16,6 +16,6 @@ public class MoneyClicker : MonoBehaviour {
 	void Update () {
         print(score);
         text.GetComponent<TextMesh>().text = score.ToString();
-
+        
     }
 }

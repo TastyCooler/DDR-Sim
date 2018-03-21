@@ -9,9 +9,11 @@ public class Human : MonoBehaviour {
     private float verticalVelocity;
     public int reputation;
     private string name;
-    SpriteRenderer rend;
+   public SpriteRenderer rend;
     GameObject dialogueManager;
     public DialogueManager dm;
+
+    public bool active;
     
    
     // Use this for initialization
@@ -21,7 +23,7 @@ public class Human : MonoBehaviour {
         startPosition = thisTransform.position;
        
         PrepareFade();
-
+        active = true;
 
         dialogueManager = GameObject.Find("DialogueManager");
         dm = dialogueManager.GetComponent<DialogueManager>();
@@ -58,7 +60,7 @@ public class Human : MonoBehaviour {
         }
     }
 
-    public void startFading()
+    public virtual void  startFading()
     {
         StartCoroutine(FadeIn());
     }
@@ -66,8 +68,18 @@ public class Human : MonoBehaviour {
 
     IEnumerator FadeOut()
     {
+        
+        int counter = 0;
         for (float f = 1f; f >= -0.05f; f -= 0.05f)
         {
+            counter += 1;
+            if (counter == 21)
+            {
+
+                dm.finish = true;
+                
+            }
+            
             Color c = rend.material.color;
             c.a = f;
             rend.material.color = c;
