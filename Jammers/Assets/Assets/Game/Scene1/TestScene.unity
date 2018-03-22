@@ -894,7 +894,7 @@ Prefab:
     - target: {fileID: 114552792029860884, guid: cb60823f4929bcf439f900b5dca7245c,
         type: 2}
       propertyPath: score
-      value: 49
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114952692460848504, guid: cb60823f4929bcf439f900b5dca7245c, type: 2}
@@ -1320,6 +1320,8 @@ MonoBehaviour:
   nowYouHaveTo: 0
   wrongItem: 0
   finish: 0
+  text: {fileID: 0}
+  sold: {fileID: 0}
 --- !u!95 &1628936910
 Animator:
   serializedVersion: 3
@@ -1515,6 +1517,7 @@ MonoBehaviour:
   shakeStrength: 50
   shakeTime: 10
   triggered: 0
+  shakeAtScore: 0
 --- !u!1 &1972429186
 GameObject:
   m_ObjectHideFlags: 0
