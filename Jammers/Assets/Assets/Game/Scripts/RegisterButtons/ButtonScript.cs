@@ -21,8 +21,6 @@ public class ButtonScript : RegisterBase {
         get { return toggledGreen; }
     }
 
-
-
     // Use this for initialization
     void Start()
     {
@@ -56,6 +54,7 @@ public class ButtonScript : RegisterBase {
         sprite.sprite = targetSprite;
         mC.score++;
         AudioSource.PlayClipAtPoint(press, transform.position);
+
         /////////////////////////////////////
         // let the registerBase shake here //
         /////////////////////////////////////
@@ -66,7 +65,6 @@ public class ButtonScript : RegisterBase {
     {
         sprite.sprite = originSprite;
         toggledGreen = false;
-
     }
 
 }
