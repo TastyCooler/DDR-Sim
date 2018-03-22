@@ -384,6 +384,8 @@ MonoBehaviour:
   nowYouHaveTo: 0
   wrongItem: 0
   finish: 0
+  text: {fileID: 8300000, guid: 86495d1152ec4974aa9dca03200fefe6, type: 3}
+  sold: {fileID: 8300000, guid: c176dd639068d334bb46e52f7c0989ab, type: 3}
 --- !u!1001 &567226178
 Prefab:
   m_ObjectHideFlags: 0
@@ -1411,6 +1413,16 @@ Prefab:
       propertyPath: no
       value: 
       objectReference: {fileID: 946382171}
+    - target: {fileID: 114894525480062372, guid: bf9f443c65e2a5847a260e2f153fd65a,
+        type: 2}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 8300000, guid: 86495d1152ec4974aa9dca03200fefe6, type: 3}
+    - target: {fileID: 114894525480062372, guid: bf9f443c65e2a5847a260e2f153fd65a,
+        type: 2}
+      propertyPath: sold
+      value: 
+      objectReference: {fileID: 8300000, guid: c176dd639068d334bb46e52f7c0989ab, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf9f443c65e2a5847a260e2f153fd65a, type: 2}
   m_IsPrefabParent: 0

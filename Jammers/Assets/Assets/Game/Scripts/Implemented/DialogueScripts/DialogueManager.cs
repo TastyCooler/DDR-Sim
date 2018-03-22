@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour {
     public bool nowYouHaveTo;
     public bool wrongItem;
     public bool finish;
+    public AudioClip text, sold; 
 
     Cola cola;
     Cigarettes cigarettes;
@@ -116,7 +117,7 @@ public class DialogueManager : MonoBehaviour {
         
         if (sentences.Count == 0 && cola.destroyed || cigarettes.destroyed || chocolate.destroyed || bBeer.destroyed || kKetchup.destroyed || sSoup.destroyed) //.Count gets the number of elements in the queue. If no elemenets then the dialogue ends
         {
-            
+            AudioSource.PlayClipAtPoint(sold, transform.position);
             Debug.Log("dialog ended");
             EndDialogue();
             
@@ -156,6 +157,7 @@ public class DialogueManager : MonoBehaviour {
         dialogueText.text = ""; //clears the text before adding new text
         foreach (char letter in sentence.ToCharArray()) //ToCharArray converts a string into a char array
         {
+            AudioSource.PlayClipAtPoint(text, transform.position);
             dialogueText.text += letter; //loops through all texts
             yield return new WaitForSeconds(0.02f); //after each letter 1 frame passes
         }
