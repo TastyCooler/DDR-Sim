@@ -35,7 +35,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4715269556337016}
   - component: {fileID: 212038429691236908}
-  - component: {fileID: 114952692460848504}
   m_Layer: 0
   m_Name: Register_Base
   m_TagString: Untagged
@@ -244,7 +243,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.22, y: 3.09}
+    oldSize: {x: 3.22, y: 3.1}
     newSize: {x: 4.86, y: 4.98}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -394,10 +393,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeStrength: 50
+  shakeTime: 0.01
+  triggered: 0
   sprite: {fileID: 0}
-  originSprite: {fileID: 21300000, guid: 66310d0d916c3184e99defbd7fd34d51, type: 3}
-  targetSprite: {fileID: 21300000, guid: 3c7695d6f7f777643bc849f76b442771, type: 3}
-  hoverSprite: {fileID: 21300000, guid: b5a973384fd2ccb4cb1db691548c6dd7, type: 3}
+  originSprite: {fileID: 21300000, guid: e22d09f774afedd439e86878632d5b2d, type: 3}
+  targetSprite: {fileID: 21300000, guid: 3fe09ed958d412c40b920f9a82ca8929, type: 3}
+  hoverSprite: {fileID: 21300000, guid: 13f37ad0edd6d32499d8fee0cafe1cd7, type: 3}
   mC: {fileID: 0}
   MoneyClicker: {fileID: 0}
   press: {fileID: 8300000, guid: 14d6d080bcc759c4d81ed8bc534e8f88, type: 3}
@@ -413,18 +414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeStrength: 90
---- !u!114 &114952692460848504
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1139580307827564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18d3937e6cb871c48a8a510614ff3dae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeStrength: 50
+  shakeTime: 0.01
+  triggered: 0
 --- !u!114 &114981618842381828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -437,10 +428,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeStrength: 50
+  shakeTime: 0.01
+  triggered: 0
   sprite: {fileID: 0}
-  originSprite: {fileID: 21300000, guid: 66310d0d916c3184e99defbd7fd34d51, type: 3}
-  targetSprite: {fileID: 21300000, guid: 3c7695d6f7f777643bc849f76b442771, type: 3}
-  hoverSprite: {fileID: 21300000, guid: b5a973384fd2ccb4cb1db691548c6dd7, type: 3}
+  originSprite: {fileID: 21300000, guid: 5c0d0e7a025d9ce40afd609f2885b338, type: 3}
+  targetSprite: {fileID: 21300000, guid: a3854b6b5e601dc468e5aaf39be7682e, type: 3}
+  hoverSprite: {fileID: 21300000, guid: 0c234ecea0842a24c8a465dc6a200fb4, type: 3}
   mC: {fileID: 0}
   MoneyClicker: {fileID: 0}
   press: {fileID: 8300000, guid: 14d6d080bcc759c4d81ed8bc534e8f88, type: 3}
@@ -518,9 +511,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 66310d0d916c3184e99defbd7fd34d51, type: 3}
-  m_Color: {r: 0, g: 0.33793116, b: 1, a: 1}
-  m_FlipX: 1
+  m_Sprite: {fileID: 21300000, guid: 5c0d0e7a025d9ce40afd609f2885b338, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 4.86, y: 4.98}
@@ -560,8 +553,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 66310d0d916c3184e99defbd7fd34d51, type: 3}
-  m_Color: {r: 0, g: 0.33793116, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e22d09f774afedd439e86878632d5b2d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

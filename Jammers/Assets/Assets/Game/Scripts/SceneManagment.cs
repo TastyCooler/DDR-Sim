@@ -28,7 +28,7 @@ public class SceneManagment : MonoBehaviour {
     {
         if (dm.finish == true)
         {
-            DontDestroyOnLoad(mC);
+            //DontDestroyOnLoad(mC);
             LoadNextLevel();
         }
 

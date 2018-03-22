@@ -27,6 +27,7 @@ public class RegisterBase : MonoBehaviour
 
     MoneyClicker mc;
 
+    static RegisterBase instance = null;
     private void Start()
     {
         buttonScript = GameObject.Find("Button_Green");
@@ -39,7 +40,20 @@ public class RegisterBase : MonoBehaviour
 
         savePosition = transform.position;
         previousShakeStrength = shakeStrength;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            
+        }
+        else
+        {
+            instance = this;
+            GameObject.DontDestroyOnLoad(gameObject);
+          
+
+        }
     }
+
     
     void Update()
     {
