@@ -28,6 +28,8 @@ public class CameraShake : MonoBehaviour
     MoneyClicker mc;
     GameObject money;
 
+    public int shakeAtScore;
+
     private void Start()
     {
         buttonScript = GameObject.Find("Button_Green");
@@ -45,7 +47,7 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-        if(mc.score >= 50)
+        if(mc.score >= shakeAtScore)
         {
             if (bs.ToggledGreen || rb.ToggledRed)
             {
