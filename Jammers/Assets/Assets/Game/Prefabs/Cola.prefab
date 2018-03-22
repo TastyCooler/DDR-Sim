@@ -188,6 +188,7 @@ MonoBehaviour:
   minGroundNormalY: 0.065
   gravityModifier: 1
   destroyed: 0
+  grab: {fileID: 8300000, guid: b32e82b460aa8924d8e8a33b4ef2fe2b, type: 3}
 --- !u!212 &212796481763141558
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -197,6 +198,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -212,6 +214,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

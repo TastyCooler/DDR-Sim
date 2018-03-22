@@ -19,7 +19,7 @@ public class Härher : Human {
             dm.waitForItem = false;
             Destroy(beer.gameObject);
         }
-        if (cola || beer || ketchup || soup || choc && dm.waitForItem)
+        if (cola || ketchup || soup || choc || cig && dm.waitForItem)
         {
             dm.wrongItem = true;
             dm.dialogended = false;

@@ -16,7 +16,7 @@ public class ObjectPhysics : MonoBehaviour {
     protected bool grounded;
     protected Vector2 groundNormal;
     public bool destroyed;
-
+    public AudioClip grab;
     protected const float minMoveDistance = 0.0001f;
     protected const float shellRadius = 0.01f;
     private void OnEnable()
@@ -124,6 +124,7 @@ public class ObjectPhysics : MonoBehaviour {
         Vector3 headingToObject = this.transform.position - Camera.main.transform.position;
         //find the projection on the forward vector of the camera
         depthIntoScene = Vector3.Dot(headingToObject, Camera.main.transform.forward);
+        AudioSource.PlayClipAtPoint(grab, transform.position);
     }
     // OnMouseDrag is called when the user has clicked on a GUIElement or Collider and is still holding down the mousebutton
 
@@ -131,6 +132,7 @@ public class ObjectPhysics : MonoBehaviour {
     {
         // when the mouse button is held and we move the mouse, move the object along with it
         // this provides simple click and drag functionality
+        
         MoveToMouseAtSpecifiedDepth(depthIntoScene);
     }
 

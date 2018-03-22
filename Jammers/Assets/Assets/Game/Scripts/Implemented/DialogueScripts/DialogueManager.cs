@@ -181,34 +181,33 @@ public class DialogueManager : MonoBehaviour {
         if (GameObject.Find("Matthias"))
         {
 
-        dialogue.sentences = new string[11] { "Ohaio Gozaimasu!", "I'm Tuto-chan","I am your best friend!","I know you are new here, let me introduce you to your work...","So most of the time people visit this store and want to buy something","You give them what they want, simple as that...","You have got a register...","Have fun with it","Funny isn't it?","And never trust Stacie","Ok now give me a cola"};
+        dialogue.sentences = new string[11] { "Ohayou Gozaimasu!", "I'm Tuto-chan","I am your best friend!","I know you are new here, let me introduce you to your work...","So most of the time people visit this store and want to buy something","You give them what they want, simple as that...","You have got a register...","Have fun with it","Funny isn't it?","And never trust Stacy","I got thirsty... give me a Cola"};
 
-        dialogue.endsentences = new string[4] { "Why are you pressing no?", "Can you stop pressing no?","Seriously press yes now","Now you have to press Yes :)" };
+        dialogue.endsentences = new string[4] { "Why are you pressing no?", "Can you stop pressing no?","Seriously press yes now", "Now you have to press Yes :)" };
 
-        dialogue.othersentences = new string[1] { "Come on it ain't that hard" };
+        dialogue.othersentences = new string[1] { "Drag and Drop the Cola and not something else... baka..." };
         }
         if (GameObject.Find("Stacy"))
         {
+            dialogue.sentences = new string[5] { "Hey I'm Stacy...", "I've heard Tuto was here, how is she? I hope she is fine.","Tuto-chan is befriended with Demo-chan don't forget that","Isn't this place beautiful? I love this place, it's the best place in this country", "Hey can I get some original cigarettes please?" };
 
-            dialogue.sentences = new string[5] { "Hey I'm Stacy...", "I've heard Tuto was here, how is she? I hope she is fine.","Tuto-chan is befriended with Demo-chan don't forget that","Isn't this place beautiful? This place is the best", "Can I get some original cigarettes please?" };
+            dialogue.endsentences = new string[4] { "What's wrong?", "There's no reason to press no", "Why are you pressing no?", "It's your job so say yes." };
 
-            dialogue.endsentences = new string[4] { "What's wrong?", "You should give me some cigarettes", "Give them now", "You better give them now." };
-
-            dialogue.othersentences = new string[1] { "This ain't cigarettes" };
+            dialogue.othersentences = new string[1] { "Are the cigarettes so badly drawn? I don't think so."};
         }
         if (GameObject.Find("Tom"))
         {
-            dialogue.sentences = new string[6] { "Hallo", "Glad Stacy left this shop", "How can she like this place that much?", "It ain't even this great...","Many friends of mine went on ''Vacation'', maybe you should come with us some day","Give me some chocolate please" };
+            dialogue.sentences = new string[7] { "Hi", "I'm glad Stacy left this shop", "How can she like this place that much?", "It ain't even that great...","Many friends of mine went on ''Vacation'', maybe you should come with me some day","It's much better out there","Give me some chocolate please" };
 
-            dialogue.endsentences = new string[2] { "Hmmm...?", "I have no time for that" };
+            dialogue.endsentences = new string[7] { "Hmmm...?", "I have no time for that","You also don't have time for that.","Or do you?","You really think there might be something funny, if you keep pressing no, right?","I'll tell my friend Benedikt","Seriously keep pressing yes"};
 
             dialogue.othersentences = new string[1] { "C-H-O-C-O-L-A-T-E" };
         }
         if (GameObject.Find("Herr Härher"))
         {
-            dialogue.sentences = new string[7] { "Gg...Ghg... GUTEN TAG!!", "My w..w...wife went on vacation without telling me", "Why did she leave without me?", "I bet we can leave simply soon", "I heard people don't come back from vacation...", "What do you think? Nevermind...","I need more beer" };
+            dialogue.sentences = new string[7] { "Gg...Ghg... GUTEN TAG!!", "My w..w...wife went on vacation without telling me", "Why did sh..sh..she leave without m..m..mee?", "I bet we can leave really simple soon", "I heard people don't come back from vacation...", "What do you think? Nevermind...","I need more beer" };
 
-            dialogue.endsentences = new string[2] { "Argh..", "Just click yes" };
+            dialogue.endsentences = new string[2] { "Argh..", "I need to talk with you" };
 
             dialogue.othersentences = new string[1] { "I need beer" };
         } 
@@ -218,25 +217,24 @@ public class DialogueManager : MonoBehaviour {
 
             dialogue.endsentences = new string[2] { "You have to work", "There's no way out" };
 
-            dialogue.othersentences = new string[1] { "I need mashed tomatoes" };
+            dialogue.othersentences = new string[1] { "I need M-A-S-H-E-D T-O-M-A-T-O-E-S" };
         }
         if (GameObject.Find("Bernd"))
         {
+            dialogue.sentences = new string[6] { "Mahlzeit!", "I don't like the seperation", "Aren't we all the same?", "I hope this will end soon", "I can't believe it is 1989 already", "Can I get some soup please?" };
 
-            dialogue.sentences = new string[7] { "Did you see Stacy?", "Ah I know where she is...", "Did you know that people rather stay here instead of going on vacation?", "Yeah I know this is actually pretty obvious", "I'd like some Ketchup", "I want to make some original Pasta today", "Ketchup please" };
+            dialogue.endsentences = new string[2] { "Why no?", "I'm a customer as everyone else" };
 
-            dialogue.endsentences = new string[2] { "You have to work", "There's no way out" };
-
-            dialogue.othersentences = new string[1] { "I need mashed tomatoes" };
+            dialogue.othersentences = new string[1] { "Onion soup, I have a date later on." };
         }
-        if (GameObject.Find("Tina"))
+        if (GameObject.Find("Demo"))
         {
 
-            dialogue.sentences = new string[7] { "Did you see Stacy?", "Ah I know where she is...", "Did you know that people rather stay here instead of going on vacation?", "Yeah I know this is actually pretty obvious", "I'd like some Ketchup", "I want to make some original Pasta today", "Ketchup please" };
+            dialogue.sentences = new string[7] { "It's the 9th November 1989", "What are you doing here?", "Go outside", "We are free now!", "Can you believe it?", "I don't understand how a wall could seperate us that simple.", "Give me that delicious chocolate bar, so we can leave already" };
 
-            dialogue.endsentences = new string[2] { "You have to work", "There's no way out" };
+            dialogue.endsentences = new string[2] { "F-R-E-E-D-O-M is waiting", "You rather keep pressing no, instead of finishing the game?" };
 
-            dialogue.othersentences = new string[1] { "I need mashed tomatoes" };
+            dialogue.othersentences = new string[1] { "I'VE BEEN LOOKING FOR FREEDOM!" };
         }
     }
 
