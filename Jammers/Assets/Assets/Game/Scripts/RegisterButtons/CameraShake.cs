@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RegisterBase : MonoBehaviour
+public class CameraShake : MonoBehaviour
 {
     Vector3 newVectorDirection;
     Vector3 savePosition;
@@ -11,7 +11,7 @@ public class RegisterBase : MonoBehaviour
     private float shakeStrength = 50;
     private float previousShakeStrength;
     private float maxRange = 500.0f;
-    
+
     [SerializeField]
     private float shakeTime = 0.01f;
 
@@ -26,6 +26,7 @@ public class RegisterBase : MonoBehaviour
     GameObject redButton;
 
     MoneyClicker mc;
+    GameObject money;
 
     private void Start()
     {
@@ -35,17 +36,21 @@ public class RegisterBase : MonoBehaviour
         redButton = GameObject.Find("Button_Red");
         rb = redButton.GetComponent<RedButton>();
 
-        mc = GetComponent<MoneyClicker>();
+        money = GameObject.Find("Money");
+        mc = money.GetComponent<MoneyClicker>();
 
         savePosition = transform.position;
         previousShakeStrength = shakeStrength;
     }
-    
+
     void Update()
     {
-        if (bs.ToggledGreen || rb.ToggledRed)
+        if(mc.score >= 50)
         {
-            triggered = true;
+            if (bs.ToggledGreen || rb.ToggledRed)
+            {
+                triggered = true;
+            }
         }
 
         LetItShake();

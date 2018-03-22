@@ -9,13 +9,12 @@ public class MoneyClicker : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-        print(score);
+        //print(score);
         text.GetComponent<TextMesh>().text = score.ToString();
-        
     }
 }
