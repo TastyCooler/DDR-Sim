@@ -11,8 +11,7 @@ public class RegisterBase : MonoBehaviour
     private float shakeStrength = 50;
     private float previousShakeStrength;
     private float maxRange = 500.0f;
-
-    [SerializeField, Range(0.01f, 10.0f)]
+    
     private float speed = 0.01f;
 
     private float timer;
@@ -36,14 +35,14 @@ public class RegisterBase : MonoBehaviour
         savePosition = transform.position;
         previousShakeStrength = shakeStrength;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (bs.ToggledGreen || rb.ToggledRed)
         {
             triggered = true;
         }
+
         LetItShake();
     }
 
@@ -56,7 +55,7 @@ public class RegisterBase : MonoBehaviour
             newVectorDirection = new Vector3(Mathf.Sin(Time.time / speed) / shakeStrength, 0.0f, 0.0f);
             transform.position = savePosition + newVectorDirection;
 
-            if (shakeStrength > 100)
+            if (shakeStrength > 100 || Input.GetMouseButtonDown(0))
             {
                 shakeStrength = previousShakeStrength;
                 transform.position = savePosition;
@@ -64,9 +63,7 @@ public class RegisterBase : MonoBehaviour
                 triggered = false;
             }
 
-            //Debug.LogFormat("triggered {0}", triggered);
-        }
 
-        //Debug.Log("Calling LetItShake() function");
+        }
     }
 }
