@@ -14,4 +14,9 @@ public class Title : MonoBehaviour {
         Debug.Log("Quit requested");
         Application.Quit();
     }
+
+    public void PresentationButton()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
