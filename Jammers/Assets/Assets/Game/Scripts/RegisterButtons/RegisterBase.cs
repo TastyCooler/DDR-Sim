@@ -12,7 +12,8 @@ public class RegisterBase : MonoBehaviour
     private float previousShakeStrength;
     private float maxRange = 500.0f;
     
-    private float speed = 0.01f;
+    [SerializeField]
+    private float shakeTime = 0.01f;
 
     private float timer;
 
@@ -52,7 +53,7 @@ public class RegisterBase : MonoBehaviour
         {
             timer += Time.deltaTime;
             shakeStrength = timer % 60 * 100;
-            newVectorDirection = new Vector3(Mathf.Sin(Time.time / speed) / shakeStrength, 0.0f, 0.0f);
+            newVectorDirection = new Vector3(Mathf.Sin(Time.time / shakeTime) / shakeStrength, 0.0f, 0.0f);
             transform.position = savePosition + newVectorDirection;
 
             if (shakeStrength > 100 || Input.GetMouseButtonDown(0))
@@ -62,8 +63,6 @@ public class RegisterBase : MonoBehaviour
                 timer = 0;
                 triggered = false;
             }
-
-
         }
     }
 }
