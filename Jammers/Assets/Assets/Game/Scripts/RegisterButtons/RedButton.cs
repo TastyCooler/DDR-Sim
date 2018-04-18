@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class RedButton : ButtonScript
 {
+    #region Private Fields
 
     private bool toggledRed;
 
-    public bool ToggledRed
-    {
+    #endregion
+
+    #region Public Class Functions
+
+    public bool ToggledRed {
         get { return toggledRed; }
     }
 
@@ -25,4 +29,6 @@ public class RedButton : ButtonScript
         sprite.sprite = originSprite;
         toggledRed = false;
     }
+
+    #endregion
 }

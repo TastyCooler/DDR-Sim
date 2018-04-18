@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    #region Public Fields
+    public bool triggered;
+    public int shakeAtScore;
+    #endregion
+
+    #region Private Fields
+
     Vector3 newVectorDirection;
     Vector3 savePosition;
-
-    [SerializeField, Range(50, 100)]
-    private float shakeStrength = 50;
-    private float previousShakeStrength;
-    private float maxRange = 500.0f;
-
-    [SerializeField]
-    private float shakeTime = 0.01f;
-
-    private float timer;
-
-    public bool triggered;
 
     ButtonScript bs;
     GameObject buttonScript;
@@ -28,7 +23,18 @@ public class CameraShake : MonoBehaviour
     MoneyClicker mc;
     GameObject money;
 
-    public int shakeAtScore;
+    [SerializeField, Range(50, 100)]
+    private float shakeStrength = 50;
+    private float previousShakeStrength;
+    private float maxRange = 500.0f;
+
+    [SerializeField]
+    private float shakeTime = 0.01f;
+
+    private float timer;
+    #endregion
+
+    #region Unity Functions
 
     private void Start()
     {
@@ -47,7 +53,7 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-        if(mc.score >= shakeAtScore)
+        if (mc.score >= shakeAtScore)
         {
             if (bs.ToggledGreen || rb.ToggledRed)
             {
@@ -57,6 +63,10 @@ public class CameraShake : MonoBehaviour
 
         LetItShake();
     }
+
+    #endregion
+
+    #region Public Class Functions
 
     public void LetItShake()
     {
@@ -76,4 +86,6 @@ public class CameraShake : MonoBehaviour
             }
         }
     }
+
+    #endregion
 }
