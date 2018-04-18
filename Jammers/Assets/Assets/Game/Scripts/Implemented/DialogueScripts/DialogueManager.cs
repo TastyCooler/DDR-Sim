@@ -6,17 +6,27 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour {
    
     #region Public fields
+
     public Animator animator;
     public Text nameText;
     public Text dialogueText;
     public Button yes;
     public Button no;
+    public AudioClip text, sold;
+    public Queue<string> sentences;
+
     public bool dialogended;
     public bool waitForItem;
     public bool nowYouHaveTo;
     public bool wrongItem;
     public bool finish;
-    public AudioClip text, sold; 
+
+    #endregion
+
+    #region Private Fields
+
+    private Queue<string> endsentences;
+    private Queue<string> othersentences;
 
     Cola cola;
     Cigarettes cigarettes;
@@ -25,14 +35,11 @@ public class DialogueManager : MonoBehaviour {
     Beer bBeer;
     Ketchup kKetchup;
     Soup sSoup;
-    
+
     #endregion
-    #region Private Fields
-    public Queue<string> sentences;
-    private Queue<string> endsentences;
-    private Queue<string> othersentences;
-    #endregion
+
     #region Unity Functions
+
     // Use this for initialization
     void Start()
     {
@@ -58,8 +65,24 @@ public class DialogueManager : MonoBehaviour {
         soup = GameObject.Find("Soup");
         sSoup = soup.GetComponent<Soup>();
     }
+
+    private void Update()
+    {
+
+        if (endsentences.Count == 0 && nowYouHaveTo)
+        {
+            yes.gameObject.SetActive(true);
+            no.gameObject.SetActive(false);
+        }
+
+        DisplayNextOtherSentence();
+
+    }
+
     #endregion
-    #region Class Functions
+
+    #region Public Class Functions
+
     public void StartDialogue(Dialogue dialogue)
     {
         InitDialogue(dialogue);
@@ -105,6 +128,7 @@ public class DialogueManager : MonoBehaviour {
         // Debug.Log(sentence);
         StopAllCoroutines();  // stops the TypeSentence coroutine, so the animation can finish
         StartCoroutine(TypeSentence(endsentence)); // starts the coroutine
+
     }
 
     public void DisplayNextSentence()
@@ -126,17 +150,16 @@ public class DialogueManager : MonoBehaviour {
         
         string sentence = sentences.Dequeue(); //removes and returns the object at the beginning of the queue
                                                // Debug.Log(sentence);
+
         StopAllCoroutines();  // stops the TypeSentence coroutine, so the animation can finish
         StartCoroutine(TypeSentence(sentence)); // starts the coroutine
        
     }
 
-
     public void DisplayNextOtherSentence()
     {
         if (wrongItem)
         {
-
 
             if (othersentences.Count == 0) //.Count gets the number of elements in the queue. If no elemenets then the dialogue ends
             {
@@ -151,6 +174,21 @@ public class DialogueManager : MonoBehaviour {
             StartCoroutine(TypeSentence(othersentence)); // starts the coroutine
         }
     }
+
+    
+
+    public void DisableNoButton()
+    {
+        no.gameObject.SetActive(false);
+    }
+    public void DisableYesButton()
+    {
+        yes.gameObject.SetActive(false);
+    }
+
+    #endregion
+
+    #region Private Class Functions
 
     IEnumerator TypeSentence(string sentence) //character animation
     {
@@ -170,49 +208,45 @@ public class DialogueManager : MonoBehaviour {
         {
             animator.SetBool("IsOpen", false); //sets the animator parameter "IsOpen" to false
             dialogended = true;
-
         }
-        
+
     }
-
-
-    #endregion
 
     void InitDialogue(Dialogue dialogue)
     {
         if (GameObject.Find("Matthias"))
         {
 
-        dialogue.sentences = new string[11] { "Ohayou Gozaimasu!", "I'm Tuto-chan","I am your best friend!","I know you are new here, let me introduce you to your work...","So most of the time people visit this store and want to buy something","You give them what they want, simple as that...","You have got a register...","Have fun with it","Funny isn't it?","And never trust Stacy","I got thirsty... give me a Cola"};
+            dialogue.sentences = new string[11] { "Ohayou Gozaimasu!", "I'm Tuto-chan", "I am your best friend!", "I know you are new here, let me introduce you to your work...", "So most of the time people visit this store and want to buy something", "You give them what they want, simple as that...", "You have got a register...", "Have fun with it", "Funny isn't it?", "And never trust Stacy", "I got thirsty... give me a Cola" };
 
-        dialogue.endsentences = new string[4] { "Why are you pressing no?", "Can you stop pressing no?","Seriously press yes now", "Now you have to press Yes :)" };
+            dialogue.endsentences = new string[4] { "Why are you pressing no?", "Can you stop pressing no?", "Seriously press yes now", "Now you have to press Yes :)" };
 
-        dialogue.othersentences = new string[1] { "Drag and Drop the Cola and not something else... baka..." };
+            dialogue.othersentences = new string[1] { "Drag and Drop the Cola and not something else... baka..." };
         }
         if (GameObject.Find("Stacy"))
         {
-            dialogue.sentences = new string[5] { "Hey I'm Stacy...", "I've heard Tuto was here, how is she? I hope she is fine.","Tuto-chan is befriended with Demo-chan don't forget that","Isn't this place beautiful? I love this place, it's the best place in this country", "Hey can I get some original cigarettes please?" };
+            dialogue.sentences = new string[5] { "Hey I'm Stacy...", "I've heard Tuto was here, how is she? I hope she is fine.", "Tuto-chan is befriended with Demo-chan don't forget that", "Isn't this place beautiful? I love this place, it's the best place in this country", "Hey can I get some original cigarettes please?" };
 
             dialogue.endsentences = new string[4] { "What's wrong?", "There's no reason to press no", "Why are you pressing no?", "It's your job so say yes." };
 
-            dialogue.othersentences = new string[1] { "Are the cigarettes so badly drawn? I don't think so."};
+            dialogue.othersentences = new string[1] { "Are the cigarettes so badly drawn? I don't think so." };
         }
         if (GameObject.Find("Tom"))
         {
-            dialogue.sentences = new string[7] { "Hi", "I'm glad Stacy left this shop", "How can she like this place that much?", "It ain't even that great...","Many friends of mine went on ''Vacation'', maybe you should come with me some day","It's much better out there","Give me some chocolate please" };
+            dialogue.sentences = new string[7] { "Hi", "I'm glad Stacy left this shop", "How can she like this place that much?", "It ain't even that great...", "Many friends of mine went on ''Vacation'', maybe you should come with me some day", "It's much better out there", "Give me some chocolate please" };
 
-            dialogue.endsentences = new string[7] { "Hmmm...?", "I have no time for that","You also don't have time for that.","Or do you?","You really think there might be something funny, if you keep pressing no, right?","I'll tell my friend Benedikt","Seriously keep pressing yes"};
+            dialogue.endsentences = new string[7] { "Hmmm...?", "I have no time for that", "You also don't have time for that.", "Or do you?", "You really think there might be something funny, if you keep pressing no, right?", "I'll tell my friend Benedikt", "Seriously keep pressing yes" };
 
             dialogue.othersentences = new string[1] { "C-H-O-C-O-L-A-T-E" };
         }
         if (GameObject.Find("Herr Härher"))
         {
-            dialogue.sentences = new string[7] { "Gg...Ghg... GUTEN TAG!!", "My w..w...wife went on vacation without telling me", "Why did sh..sh..she leave without m..m..mee?", "I bet we can leave really simple soon", "I heard people don't come back from vacation...", "What do you think? Nevermind...","I need more beer" };
+            dialogue.sentences = new string[7] { "Gg...Ghg... GUTEN TAG!!", "My w..w...wife went on vacation without telling me", "Why did sh..sh..she leave without m..m..mee?", "I bet we can leave really simple soon", "I heard people don't come back from vacation...", "What do you think? Nevermind...", "I need more beer" };
 
             dialogue.endsentences = new string[2] { "Argh..", "I need to talk with you" };
 
             dialogue.othersentences = new string[1] { "I need beer" };
-        } 
+        }
         if (GameObject.Find("Stefan"))
         {
             dialogue.sentences = new string[7] { "Did you see Stacy?", "Ah I know where she is...", "Did you know that people rather stay here instead of going on vacation?", "Yeah I know this is actually pretty obvious", "I'd like some Ketchup", "I want to make some original Pasta today", "Ketchup please" };
@@ -231,7 +265,6 @@ public class DialogueManager : MonoBehaviour {
         }
         if (GameObject.Find("Demo"))
         {
-
             dialogue.sentences = new string[7] { "It's the 9th November 1989", "What are you doing here?", "Go outside", "We are free now!", "Can you believe it?", "I don't understand how a wall could seperate us that simple.", "Give me that delicious chocolate bar, so we can leave already" };
 
             dialogue.endsentences = new string[2] { "F-R-E-E-D-O-M is waiting", "You rather keep pressing no, instead of finishing the game?" };
@@ -240,33 +273,5 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
-  
-
-    public void DisableNoButton()
-    {
-        
-            no.gameObject.SetActive(false);
-            
-    }
-    public void DisableYesButton()
-    {
-        
-        yes.gameObject.SetActive(false);
-    }
-
-    private void Update()
-    {
-        
-        if(endsentences.Count == 0 && nowYouHaveTo)
-        {
-            yes.gameObject.SetActive(true);
-            no.gameObject.SetActive(false);
-        }
-
-      
-            DisplayNextOtherSentence();
-        
-
-    }
-
+    #endregion
 }
